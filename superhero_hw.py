@@ -13,7 +13,7 @@ for items in response.json():
     if items['name'] in heroes_list:
         superheroes_intelligence[items['name']] = \
             items['powerstats']['intelligence']
-most_intell = max(superheroes_intelligence)
+most_intell = max(superheroes_intelligence, key=superheroes_intelligence.get)
 print(f'Самым умным среди {",".join(superheroes_intelligence)} '
     f'оказался {most_intell}')
 
