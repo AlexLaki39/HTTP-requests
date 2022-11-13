@@ -20,8 +20,7 @@ class YaUploader:
         response = requests.get(requests_url, headers=self.get_headers(),
                                 params=params)
         response1 = requests.put(response.json()['href'],
-                                 data=open(file_path, 'rb'),
-                                 headers=self.get_headers())
+                                 data=file_path)
         print(response1.status_code)
 
 
